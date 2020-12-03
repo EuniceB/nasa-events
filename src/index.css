@@ -46,8 +46,9 @@ body {
   list-style: none;
   position: absolute;
   background-color: white;
+  border-radius: 2px;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .dropdown ul li {
@@ -113,11 +114,37 @@ header h1 {
 .alert {
   position: absolute;
   width: 50vw;
-  bottom: 0;
+  bottom: 10px;
+  left: 10px;
 }
 
 .information-overlay {
   position: absolute;
-  top: 200px;
-  right: 8px;
+  bottom: 10px;
+  left: 10px;
+}
+
+@media screen and (max-width: 800px){
+  .dropdown {
+    margin: 10px 0;
+  }
+
+  .filters {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header .desc {
+    font-size: 13px;
+  }
+
+  .information-overlay{
+
+  }
+  
 }

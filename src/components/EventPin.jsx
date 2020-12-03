@@ -37,16 +37,16 @@ const categoryColor = {
     earthquakes: 'black',
     floods: 'blue',
     landslides: 'brown',
-    manmade: 'grey',
+    manmade: 'black',
     seaLakeIce: 'blue',
-    severeStorms: 'grey',
+    severeStorms: 'black',
     snow: 'blue',
     tempExtremes: 'red',
     volcanoes: 'red',
     waterColor: 'purple'
 }
 
-const EventPin = ({ event, showEventInfo }) => <div className="pin" onClick={() => showEventInfo(event)}>
+const EventPin = ({ event, showEventInfo }) => <div className="pin" onClick={(e) => {e.stopPropagation();showEventInfo(event)}}>
     <Icon icon={categoryIcon[event.category]} width="24px" color={categoryColor[event.category]} />
 </div>;
 

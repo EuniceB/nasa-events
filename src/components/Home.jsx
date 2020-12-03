@@ -3,7 +3,6 @@ import InformationOverlay from "./InformationOverlay";
 import PropTypes from "prop-types";
 import Alert from "./Alert";
 import { useState } from "react";
-import Filters from "./Filters";
 import Header from "./Header";
 
 const Home = ({
@@ -15,10 +14,20 @@ const Home = ({
 }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  const setCategory = (category) => {
+    setSelectedEvent(null);
+    setSelectedCategory(category);
+  }
+
+  const setTimePeriod = (timePeriod) => {
+    setSelectedEvent(null);
+    setSelectedTimePeriod(timePeriod);
+  }
+
   return (
     <>
-      <Header categories={categories} setSelectedCategory={setSelectedCategory} setSelectedTimePeriod={setSelectedTimePeriod}/>
-      <Map events={events} showEventInfo={(event) => setSelectedEvent(event)} />
+      <Header categories={categories} setSelectedCategory={setCategory} setSelectedTimePeriod={setTimePeriod}/>
+      <Map events={events} showEventInfo={(event) => setSelectedEvent(event)} resetEvent={() => setSelectedEvent(null)} />
       {selectedEvent && <InformationOverlay event={selectedEvent} />}
       {alert && <Alert alert={alert} />}
     </>
