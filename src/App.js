@@ -4,14 +4,13 @@ import axios from "axios";
 import { calculateDaysSince } from "./utils";
 
 const App = () => {
-  const now = new Date();
-
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({
     title: "Volcanoes",
     id: "volcanoes",
   });
+  const now = new Date();
   const [selectedTimePeriod, setSelectedTimePeriod] = useState({
     title: "This year",
     days: calculateDaysSince(new Date(now.getFullYear(), 0, 1)),
@@ -26,34 +25,32 @@ const App = () => {
     }, 2000);
   };
 
-  const fetchEvents = async (categoryId, days) => {
-    let url = categoryId
-      ? `https://eonet.sci.gsfc.nasa.gov/api/v3/categories/${categoryId}`
-      : "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
-    url += days ? "?days=" : "";
-    const { data } = await axios.get(url);
-    setEvents(data.events);
-  };
-
-  const fetchCategories = async () => {
-    let url = "https://eonet.sci.gsfc.nasa.gov/api/v3/categories";
-    const { data } = await axios.get(url);
-    setCategories(data.categories);
-  };
-
   useEffect(() => {
-    fetchEvents(
-      selectedCategory ? selectedCategory.id : null,
-      selectedTimePeriod ? selectedTimePeriod.days : null
-    );
-    if (events.length === 0) {
-      showAlert("We found no events. Try another category or time.");
-    } else {
-      showAlert(`${events.length} events found.`);
-    }
+    const updateEvents = async () => {
+      let url = selectedCategory
+        ? `https://eonet.sci.gsfc.nasa.gov/api/v3/categories/${selectedCategory.id}`
+        : "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
+      url += selectedTimePeriod ? "?days=" + selectedTimePeriod.days : "";
+      const { data } = await axios.get(url);
+      setEvents(data.events);
+      if (data.events.length === 0) {
+        showAlert("We found no events. Try another category or time.");
+      } else {
+        showAlert(`${data.events.length} events found.`);
+      }
+    };
+
+    updateEvents();
   }, [selectedCategory, selectedTimePeriod]);
 
   useEffect(() => {
+    const fetchCategories = async () => {
+      const { data } = await axios.get(
+        "https://eonet.sci.gsfc.nasa.gov/api/v3/categories"
+      );
+      setCategories(data.categories);
+    };
+
     fetchCategories();
   }, []);
 
