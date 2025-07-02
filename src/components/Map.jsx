@@ -70,7 +70,7 @@ const Map = ({ events, showEventInfo, resetEvent }) => {
     <div style={{ width: "100vw", height: mapHeight }}>
       <GoogleMap
         bootstrapURLKeys={{
-          key: "AIzaSyDSghDK0XWTOPMyvT2rvgPWycmNjfcnN7Y",
+          key: "AIzaSyCzWNIl6YwU2ibmZQonkytVOWzcIXxAxzA",
           v: "3.43",
         }}
         center={center}

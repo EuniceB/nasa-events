@@ -28,8 +28,8 @@ const App = () => {
   useEffect(() => {
     const updateEvents = async () => {
       let url = selectedCategory
-        ? `https://eonet.sci.gsfc.nasa.gov/api/v3/categories/${selectedCategory.id}`
-        : "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
+        ? `https://eonet.gsfc.nasa.gov/api/v3/categories/${selectedCategory.id}`
+        : "https://eonet.gsfc.nasa.gov/api/v3/events";
       url += selectedTimePeriod ? "?days=" + selectedTimePeriod.days : "";
       const { data } = await axios.get(url);
       setEvents(data.events);
