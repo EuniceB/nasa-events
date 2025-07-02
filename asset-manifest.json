@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/nasa-events/static/css/main.f292ef23.chunk.css",
-    "main.js": "/nasa-events/static/js/main.4bad9ca7.chunk.js",
-    "main.js.map": "/nasa-events/static/js/main.4bad9ca7.chunk.js.map",
+    "main.css": "/nasa-events/static/css/main.0e9738fa.chunk.css",
+    "main.js": "/nasa-events/static/js/main.b622ed10.chunk.js",
+    "main.js.map": "/nasa-events/static/js/main.b622ed10.chunk.js.map",
     "runtime-main.js": "/nasa-events/static/js/runtime-main.90b92f4b.js",
     "runtime-main.js.map": "/nasa-events/static/js/runtime-main.90b92f4b.js.map",
-    "static/js/2.05aa4241.chunk.js": "/nasa-events/static/js/2.05aa4241.chunk.js",
-    "static/js/2.05aa4241.chunk.js.map": "/nasa-events/static/js/2.05aa4241.chunk.js.map",
+    "static/js/2.8c0187f8.chunk.js": "/nasa-events/static/js/2.8c0187f8.chunk.js",
+    "static/js/2.8c0187f8.chunk.js.map": "/nasa-events/static/js/2.8c0187f8.chunk.js.map",
     "static/js/3.0fe69524.chunk.js": "/nasa-events/static/js/3.0fe69524.chunk.js",
     "static/js/3.0fe69524.chunk.js.map": "/nasa-events/static/js/3.0fe69524.chunk.js.map",
     "index.html": "/nasa-events/index.html",
-    "static/css/main.f292ef23.chunk.css.map": "/nasa-events/static/css/main.f292ef23.chunk.css.map",
-    "static/js/2.05aa4241.chunk.js.LICENSE.txt": "/nasa-events/static/js/2.05aa4241.chunk.js.LICENSE.txt"
+    "static/css/main.0e9738fa.chunk.css.map": "/nasa-events/static/css/main.0e9738fa.chunk.css.map",
+    "static/js/2.8c0187f8.chunk.js.LICENSE.txt": "/nasa-events/static/js/2.8c0187f8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.90b92f4b.js",
-    "static/js/2.05aa4241.chunk.js",
-    "static/css/main.f292ef23.chunk.css",
-    "static/js/main.4bad9ca7.chunk.js"
+    "static/js/2.8c0187f8.chunk.js",
+    "static/css/main.0e9738fa.chunk.css",
+    "static/js/main.b622ed10.chunk.js"
   ]
 }
