@@ -15,6 +15,10 @@ const getCleanEvents = (dirtyEvents) => {
         id: event.id,
         description: event.description,
         title: event.title,
+        link:
+          event.sources && event.sources.length > 0
+            ? event.sources[0].url
+            : null,
         lat: latestGeometry.coordinates[1],
         lng: latestGeometry.coordinates[0],
         date: latestGeometry.date,
@@ -76,6 +80,18 @@ const Map = ({ events, showEventInfo, resetEvent }) => {
         center={center}
         onClick={() => resetEvent()}
         zoom={3}
+        options={{
+          fullscreenControl: false,
+          restriction: {
+            latLngBounds: {
+              north: 85,
+              south: -85,
+              west: -180,
+              east: 180,
+            },
+          },
+          gestureHandling: "greedy",
+        }}
       >
         {renderEvents()}
       </GoogleMap>

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { calculateDaysSince } from "./utils";
 
+
+    // TODO Show a loading icon after selecting a category
 const App = () => {
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -46,7 +48,7 @@ const App = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const { data } = await axios.get(
-        "https://eonet.sci.gsfc.nasa.gov/api/v3/categories"
+        "https://eonet.gsfc.nasa.gov/api/v3/categories"
       );
       setCategories(data.categories);
     };
